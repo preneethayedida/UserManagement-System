@@ -1,0 +1,209 @@
+/**
+ * sidebar.css — Neon Space Dark Sidebar
+ * ═══════════════════════════════════════
+ */
+
+/* ── Shell ──────────────────────────────────────────────── */
+.app-sidebar {
+    width: var(--sidebar-w);
+    min-width: var(--sidebar-w);
+    background: var(--sidebar-bg);
+    border-right: 1px solid var(--sidebar-border);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    z-index: 200;
+    transition: var(--transition);
+    overflow: hidden;
+}
+
+/* ── Header ─────────────────────────────────────────────── */
+.sidebar-header {
+    padding: 1.8rem 1.2rem 1.2rem;
+    border-bottom: 1px solid var(--sidebar-border);
+    background: linear-gradient(180deg, rgba(191,95,255,0.04) 0%, transparent 100%);
+}
+
+.sidebar-user-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    text-align: center;
+}
+
+.sidebar-avatar-img {
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    box-shadow:
+        0 0 0 2px var(--neon-violet),
+        0 0 18px var(--glow-violet),
+        0 0 40px rgba(191,95,255,0.15);
+    transition: var(--transition);
+}
+
+.sidebar-avatar-img:hover {
+    box-shadow:
+        0 0 0 2px var(--neon-cyan),
+        0 0 20px var(--glow-cyan),
+        0 0 50px rgba(6,255,165,0.15);
+    transform: scale(1.04);
+}
+
+.sidebar-username {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 0.88rem;
+    color: var(--text-white);
+    display: block;
+    letter-spacing: -0.2px;
+}
+
+.sidebar-email {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 210px;
+}
+
+/* ── Nav ─────────────────────────────────────────────────── */
+.sidebar-nav {
+    flex: 1;
+    padding: 1rem 0.75rem;
+    overflow-y: auto;
+}
+
+.sidebar-menu {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.18rem;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar-section-label {
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(191,95,255,0.35);
+    padding: 1rem 0.75rem 0.4rem;
+}
+
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    gap: 0.78rem;
+    padding: 0.72rem 1rem;
+    border-radius: var(--r-sm);
+    color: var(--sidebar-text);
+    font-size: 0.855rem;
+    font-weight: 500;
+    border: 1px solid transparent;
+    transition: var(--transition);
+    position: relative;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.sidebar-link i {
+    font-size: 1.05rem;
+    width: 20px;
+    text-align: center;
+    flex-shrink: 0;
+    transition: var(--transition);
+}
+
+.sidebar-link:hover {
+    background: var(--sidebar-hover);
+    color: var(--neon-violet);
+    border-color: rgba(191,95,255,0.12);
+    transform: translateX(5px);
+}
+
+.sidebar-link:hover i { color: var(--neon-violet); }
+
+/* Active state — neon gradient pill */
+.sidebar-link.active {
+    background: linear-gradient(135deg, rgba(191,95,255,0.15) 0%, rgba(6,255,165,0.08) 100%);
+    color: var(--neon-violet);
+    border-color: rgba(191,95,255,0.25);
+    box-shadow: inset 0 0 20px rgba(191,95,255,0.05), 0 0 12px rgba(191,95,255,0.1);
+    transform: none;
+}
+
+.sidebar-link.active i { color: var(--neon-cyan); }
+
+/* Glowing left accent bar for active */
+.sidebar-link.active::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3px;
+    height: 55%;
+    background: linear-gradient(var(--neon-violet), var(--neon-cyan));
+    border-radius: 0 3px 3px 0;
+    box-shadow: 0 0 8px var(--glow-violet);
+}
+
+/* ── Footer / Sign Out ───────────────────────────────────── */
+.sidebar-footer {
+    padding: 1rem 0.75rem;
+    border-top: 1px solid var(--sidebar-border);
+}
+
+.sidebar-signout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    padding: 0.72rem 1rem;
+    border-radius: var(--r-sm);
+    color: var(--neon-pink);
+    font-size: 0.855rem;
+    font-weight: 600;
+    border: 1px solid rgba(255,45,120,0.2);
+    background: rgba(255,45,120,0.04);
+    transition: var(--transition);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.sidebar-signout:hover {
+    background: rgba(255,45,120,0.1);
+    border-color: rgba(255,45,120,0.45);
+    color: var(--neon-pink);
+    box-shadow: 0 0 14px rgba(255,45,120,0.15);
+    transform: translateY(-2px);
+}
+
+/* ── Collapsed ───────────────────────────────────────────── */
+.app-sidebar.collapsed {
+    width: 72px;
+    min-width: 72px;
+}
+
+.app-sidebar.collapsed .sidebar-user-text,
+.app-sidebar.collapsed .sidebar-link span,
+.app-sidebar.collapsed .sidebar-section-label,
+.app-sidebar.collapsed .sidebar-signout span {
+    display: none;
+}
+
+.app-sidebar.collapsed .sidebar-avatar-img { width: 40px; height: 40px; }
+.app-sidebar.collapsed .sidebar-link { justify-content: center; padding: 0.72rem 0; }
+.app-sidebar.collapsed .sidebar-link:hover { transform: none; }
+.app-sidebar.collapsed .sidebar-link i { width: auto; }
+.app-sidebar.collapsed .sidebar-signout { justify-content: center; padding: 0.72rem 0; }

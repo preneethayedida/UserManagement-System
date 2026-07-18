@@ -1,0 +1,4 @@
+[2026-07-18 09:01:04] [WARNING] File: C:\Users\mohan\OneDrive\Desktop\preneetha tasks\user-management-system\controllers\AuthController.php | Line: 82 | Message: session_regenerate_id(): Session ID cannot be regenerated when there is no active session
+--------------------------------------------------------------------------------
+[2026-07-18 09:01:04] [WARNING] File: C:\Users\mohan\OneDrive\Desktop\preneetha tasks\user-management-system\helpers\functions.php | Line: 34 | Message: Cannot modify header information - headers already sent by (output started at C:\Users\mohan\OneDrive\Desktop\preneetha tasks\user-management-system\config\constants.php:10)
+--------------------------------------------------------------------------------

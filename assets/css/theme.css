@@ -1,0 +1,61 @@
+/**
+ * theme.css — Dark by default. Light mode support.
+ * The neon theme IS the dark theme.
+ */
+
+/* Light mode fallback (optional — neon still works) */
+[data-bs-theme="light"] {
+    --bg-cosmos: #F4F0FF;
+    --bg-space:  #EDE5FF;
+    --bg-card:   #FFFFFF;
+    --bg-input:  #F8F5FF;
+    --bg-surface: #EDE5FF;
+    --sidebar-bg: #1A0E2E;
+    --border:    rgba(147,51,234,0.12);
+    --border-bright: rgba(191,95,255,0.35);
+    --text-white: #1A0E2E;
+    --text-body:  #3B1F6E;
+    --text-muted: #9B72CF;
+    --navbar-bg:  rgba(255,255,255,0.88);
+    --navbar-border: rgba(191,95,255,0.2);
+    --sidebar-text: rgba(240,230,255,0.5);
+}
+
+[data-bs-theme="light"] body {
+    background-color: var(--bg-cosmos);
+    background-image:
+        radial-gradient(ellipse at 20% 10%, rgba(191,95,255,0.1) 0%, transparent 55%),
+        radial-gradient(ellipse at 80% 85%, rgba(6,255,165,0.07) 0%, transparent 55%);
+}
+
+[data-bs-theme="light"] .card {
+    background: rgba(255,255,255,0.9) !important;
+    border-color: rgba(191,95,255,0.15) !important;
+}
+
+[data-bs-theme="light"] .stat-card {
+    background: rgba(255,255,255,0.9);
+    border-color: rgba(191,95,255,0.15);
+}
+
+[data-bs-theme="light"] .table thead th {
+    background: rgba(191,95,255,0.06) !important;
+}
+
+[data-bs-theme="light"] .table tbody td {
+    color: var(--text-body) !important;
+    border-color: rgba(191,95,255,0.1) !important;
+}
+
+[data-bs-theme="light"] .form-control,
+[data-bs-theme="light"] .form-select {
+    background: #FFFFFF !important;
+    border-color: rgba(191,95,255,0.2) !important;
+    color: var(--text-white) !important;
+}
+
+/* Icon swap for theme toggle */
+[data-bs-theme="dark"] #theme-icon-light  { display: none !important; }
+[data-bs-theme="dark"] #theme-icon-dark   { display: inline-block !important; }
+[data-bs-theme="light"] #theme-icon-light { display: inline-block !important; }
+[data-bs-theme="light"] #theme-icon-dark  { display: none !important; }

@@ -1,0 +1,97 @@
+/**
+ * dashboard.css — Dashboard Layout & Charts
+ */
+
+/* Stats grid */
+.dashboard-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.25rem;
+}
+
+/* Chart containers */
+.chart-container {
+    position: relative;
+    height: 280px;
+    width: 100%;
+}
+
+/* Welcome banner — neon gradient pill */
+.welcome-banner {
+    background: linear-gradient(135deg, rgba(191,95,255,0.08) 0%, rgba(6,255,165,0.04) 100%) !important;
+    border: 1px solid rgba(191,95,255,0.15) !important;
+    border-radius: var(--r-md) !important;
+    padding: 1.4rem 1.6rem !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.welcome-banner::before {
+    content: '';
+    position: absolute;
+    top: -40%;
+    left: -10%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(191,95,255,0.08) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+/* Bootstrap bg-primary bg-opacity-10 override */
+.card.border-0.bg-primary,
+.card.bg-primary {
+    background: linear-gradient(135deg, rgba(191,95,255,0.08) 0%, rgba(6,255,165,0.04) 100%) !important;
+    border: 1px solid rgba(191,95,255,0.15) !important;
+    box-shadow: none !important;
+}
+
+.card.border-0.bg-primary h4,
+.card.border-0.bg-primary p,
+.card.bg-primary h4,
+.card.bg-primary p {
+    color: var(--text-body) !important;
+}
+
+/* Quick actions */
+.quick-actions-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+/* Profile gauge */
+.gauge-container {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+}
+
+.gauge-circle { transform: rotate(-90deg); }
+
+.gauge-circle-bg {
+    fill: none;
+    stroke: rgba(255,255,255,0.06);
+    stroke-width: 7;
+}
+
+.gauge-circle-val {
+    fill: none;
+    stroke: url(#gaugeGradient);
+    stroke-width: 7;
+    stroke-linecap: round;
+    transition: stroke-dashoffset 0.8s var(--ease);
+    /* fallback if SVG gradient not set */
+    stroke: var(--neon-violet);
+    filter: drop-shadow(0 0 6px var(--neon-violet));
+}
+
+.gauge-text {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--text-white);
+}

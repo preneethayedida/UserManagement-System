@@ -1,0 +1,22 @@
+/**
+ * layout.css — App Shell
+ */
+.app-container {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+}
+
+/* Auth pages override: login/register are standalone full-screen */
+.app-container:has(.auth-shell) {
+    display: block;
+}
+
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    min-width: 0;
+    background: transparent;
+}

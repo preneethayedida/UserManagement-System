@@ -1,0 +1,64 @@
+/**
+ * animations.css — Neon UI Micro Animations
+ */
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(22px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes neonPulse {
+    0%, 100% { box-shadow: 0 0 8px  var(--glow-violet); }
+    50%       { box-shadow: 0 0 24px var(--glow-violet); }
+}
+
+@keyframes cyanPulse {
+    0%, 100% { box-shadow: 0 0 8px  var(--glow-cyan); }
+    50%       { box-shadow: 0 0 24px var(--glow-cyan); }
+}
+
+@keyframes shimmer {
+    0%   { background-position: -200% center; }
+    100% { background-position:  200% center; }
+}
+
+.animate-fade-in  { animation: fadeIn  0.45s var(--ease) both; }
+.animate-slide-up { animation: slideUp 0.5s  var(--ease) both; }
+.animate-delay-1  { animation-delay: 0.08s; }
+.animate-delay-2  { animation-delay: 0.16s; }
+.animate-delay-3  { animation-delay: 0.24s; }
+.animate-delay-4  { animation-delay: 0.32s; }
+
+/* Neon shimmer text */
+.neon-text {
+    background: linear-gradient(90deg, var(--neon-violet), var(--neon-cyan), var(--neon-violet));
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shimmer 3s linear infinite;
+}
+
+/* Spinner overlay */
+.spinner-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(7,5,18,0.7);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    z-index: 10;
+    backdrop-filter: blur(4px);
+}
+
+.spinner-overlay.show { display: flex; }
+
+.spinner-border {
+    color: var(--neon-violet) !important;
+}

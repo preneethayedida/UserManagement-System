@@ -1,0 +1,11 @@
+# Disable directory indexing
+Options -Indexes
+
+# Prevent execution of any scripts
+<Files *>
+    SetHandler default-handler
+</Files>
+
+# Remove PHP handlers to prevent PHP execution
+RemoveHandler .php .phtml .php3 .php4 .php5 .php6 .php7 .php8 .phps
+RemoveType .php .phtml .php3 .php4 .php5 .php6 .php7 .php8 .phps

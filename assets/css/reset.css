@@ -1,0 +1,53 @@
+/**
+ * reset.css — Base & Body Reset
+ */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-sans);
+    background-color: var(--bg-cosmos);
+    color: var(--text-body);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    min-height: 100vh;
+
+    /* subtle star-field noise effect */
+    background-image:
+        radial-gradient(ellipse at 20% 10%, rgba(191,95,255,0.06) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 80%, rgba(6,255,165,0.04) 0%, transparent 60%);
+}
+
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; display: block; }
+button { font-family: inherit; }
+
+/* Neon scrollbar */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: var(--bg-cosmos); }
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(var(--neon-violet), var(--neon-cyan));
+    border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover { opacity: 0.8; }
+
+/* Bootstrap overrides — nuke default colors */
+.text-primary   { color: var(--neon-violet) !important; }
+.text-success   { color: var(--neon-cyan)   !important; }
+.text-danger    { color: var(--neon-pink)   !important; }
+.text-warning   { color: var(--neon-amber)  !important; }
+.text-muted     { color: var(--text-muted)  !important; }
+
+.bg-body        { background-color: var(--bg-cosmos) !important; }
+.bg-body-tertiary { background-color: var(--bg-surface) !important; }
+.border-primary { border-color: var(--border-bright) !important; }

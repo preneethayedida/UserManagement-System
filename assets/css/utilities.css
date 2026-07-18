@@ -1,0 +1,210 @@
+/**
+ * utilities.css — Neon Helper Classes & Components
+ */
+
+/* ── Typography ──────────────────────────────────────────── */
+.font-heading { font-family: var(--font-heading) !important; }
+.font-sans    { font-family: var(--font-sans) !important; }
+.fs-7  { font-size: 0.875rem !important; }
+.fs-8  { font-size: 0.78rem  !important; }
+.fs-9  { font-size: 0.7rem   !important; }
+
+/* ── Page Header ─────────────────────────────────────────── */
+.page-title-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.75rem;
+}
+
+.page-title {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-white);
+    margin: 0;
+    line-height: 1.2;
+    background: linear-gradient(135deg, var(--neon-violet) 0%, var(--neon-cyan) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.page-subtitle {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin: 0.3rem 0 0;
+}
+
+/* ── Date Pill ───────────────────────────────────────────── */
+.date-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.45rem 1rem;
+    background: rgba(191,95,255,0.06);
+    border: 1px solid var(--border-bright);
+    border-radius: var(--r-full);
+    font-size: 0.79rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+/* ── Welcome Banner ──────────────────────────────────────── */
+.welcome-banner {
+    background: linear-gradient(135deg, rgba(191,95,255,0.08) 0%, rgba(6,255,165,0.05) 100%);
+    border: 1px solid rgba(191,95,255,0.15);
+    border-radius: var(--r-md);
+    padding: 1.4rem 1.6rem;
+}
+
+/* ── Breadcrumb ──────────────────────────────────────────── */
+.breadcrumb {
+    background: transparent !important;
+    padding: 0 !important;
+    margin-bottom: 1.25rem !important;
+    font-size: 0.8rem;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    color: var(--text-muted) !important;
+}
+
+.breadcrumb-item a {
+    color: var(--neon-violet);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.breadcrumb-item a:hover {
+    text-decoration: underline;
+    text-shadow: 0 0 8px var(--glow-violet);
+}
+
+.breadcrumb-item.active {
+    color: var(--text-muted) !important;
+}
+
+/* ── Profile cover ───────────────────────────────────────── */
+.profile-cover {
+    height: 120px;
+    background: linear-gradient(135deg, #2D0057 0%, var(--neon-violet) 40%, var(--neon-cyan) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.profile-cover::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse at 80% 50%, rgba(6,255,165,0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at 20% 50%, rgba(191,95,255,0.2) 0%, transparent 50%);
+}
+
+.profile-avatar-container {
+    margin-top: -50px;
+    position: relative;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-avatar-img {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--neon-violet);
+    box-shadow: 0 0 0 3px rgba(191,95,255,0.2), 0 0 20px var(--glow-violet);
+    display: block;
+}
+
+/* ── Misc ────────────────────────────────────────────────── */
+.object-fit-cover { object-fit: cover; }
+
+.neon-divider {
+    border: none;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border-bright), transparent);
+    margin: 1rem 0;
+}
+
+/* Modal override */
+.modal-content {
+    background: var(--bg-card) !important;
+    border: 1px solid var(--border-bright) !important;
+    border-radius: var(--r-lg) !important;
+    color: var(--text-body) !important;
+}
+
+.modal-header {
+    border-bottom: 1px solid var(--border) !important;
+    background: rgba(191,95,255,0.04) !important;
+}
+
+.modal-header .modal-title { color: var(--text-white) !important; }
+
+.modal-footer { border-top: 1px solid var(--border) !important; }
+
+.btn-close {
+    filter: invert(1) !important;
+    opacity: 0.5 !important;
+}
+
+.btn-close:hover { opacity: 1 !important; }
+
+/* Dropdown override for Bootstrap dropdowns */
+.dropdown-menu {
+    background: var(--bg-card) !important;
+    border: 1px solid var(--border-bright) !important;
+    border-radius: var(--r-md) !important;
+    box-shadow: var(--shadow-lg), 0 0 24px rgba(191,95,255,0.08) !important;
+}
+
+.dropdown-item {
+    color: var(--text-body) !important;
+    font-size: 0.85rem !important;
+    font-weight: 500 !important;
+    transition: var(--transition) !important;
+}
+
+.dropdown-item:hover {
+    background: var(--soft-violet) !important;
+    color: var(--neon-violet) !important;
+}
+
+.dropdown-item.text-danger,
+.dropdown-item.text-danger:hover {
+    color: var(--neon-pink) !important;
+    background: var(--soft-pink) !important;
+}
+
+.dropdown-divider { border-color: var(--border) !important; }
+
+/* Alert override */
+.alert {
+    border-radius: var(--r-md) !important;
+    border: 1px solid !important;
+}
+
+.alert-success {
+    background: rgba(6,255,165,0.06) !important;
+    border-color: rgba(6,255,165,0.2) !important;
+    color: var(--neon-cyan) !important;
+}
+
+.alert-danger {
+    background: rgba(255,45,120,0.06) !important;
+    border-color: rgba(255,45,120,0.2) !important;
+    color: var(--neon-pink) !important;
+}
+
+.alert-warning {
+    background: rgba(255,214,10,0.06) !important;
+    border-color: rgba(255,214,10,0.2) !important;
+    color: var(--neon-amber) !important;
+}

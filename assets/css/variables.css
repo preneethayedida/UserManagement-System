@@ -1,0 +1,75 @@
+/**
+ * variables.css
+ * ═══════════════════════════════════════════════════════════
+ *  NEON SPACE THEME — Violet × Cyan × Dark Cosmos
+ *  Premium SaaS Design Tokens
+ * ═══════════════════════════════════════════════════════════
+ */
+:root {
+    /* ── Core Neon Palette ─────────────────────────────────── */
+    --neon-violet:      #BF5FFF;        /* Electric Violet    */
+    --neon-violet-dark: #9333EA;        /* Deep Violet        */
+    --neon-cyan:        #06FFA5;        /* Neon Mint Cyan     */
+    --neon-cyan-dark:   #00C47A;        /* Deep Mint          */
+    --neon-pink:        #FF2D78;        /* Hot Pink accent    */
+    --neon-amber:       #FFD60A;        /* Electric Amber     */
+
+    /* ── Glow / Soft overlays ──────────────────────────────── */
+    --glow-violet:      rgba(191, 95, 255, 0.25);
+    --glow-cyan:        rgba(6, 255, 165, 0.2);
+    --glow-pink:        rgba(255, 45, 120, 0.2);
+    --soft-violet:      rgba(191, 95, 255, 0.08);
+    --soft-cyan:        rgba(6, 255, 165, 0.08);
+    --soft-pink:        rgba(255, 45, 120, 0.08);
+
+    /* ── Space Backgrounds ─────────────────────────────────── */
+    --bg-cosmos:        #070512;        /* Deepest space      */
+    --bg-space:         #0D0920;        /* Deep dark purple   */
+    --bg-card:          #130E28;        /* Card surface       */
+    --bg-card-hover:    #1A1235;        /* Card hover state   */
+    --bg-input:         #0F0B22;        /* Input surface      */
+    --bg-surface:       #1C1535;        /* Elevated surface   */
+
+    /* ── Sidebar ────────────────────────────────────────────── */
+    --sidebar-bg:       #08051A;
+    --sidebar-border:   rgba(191,95,255,0.08);
+    --sidebar-text:     rgba(255,255,255,0.38);
+    --sidebar-hover:    rgba(191,95,255,0.06);
+    --sidebar-w:        260px;
+
+    /* ── Navbar ─────────────────────────────────────────────── */
+    --navbar-bg:        rgba(7,5,18,0.82);
+    --navbar-border:    rgba(191,95,255,0.12);
+    --navbar-h:         68px;
+
+    /* ── Borders ────────────────────────────────────────────── */
+    --border:           rgba(255,255,255,0.07);
+    --border-bright:    rgba(191,95,255,0.3);
+    --border-cyan:      rgba(6,255,165,0.25);
+
+    /* ── Text ───────────────────────────────────────────────── */
+    --text-white:       #F0E6FF;
+    --text-body:        rgba(240,230,255,0.75);
+    --text-muted:       rgba(240,230,255,0.35);
+
+    /* ── Typography ─────────────────────────────────────────── */
+    --font-sans:        'Inter', -apple-system, sans-serif;
+    --font-heading:     'Poppins', sans-serif;
+
+    /* ── Radius ─────────────────────────────────────────────── */
+    --r-sm:  10px;
+    --r-md:  14px;
+    --r-lg:  20px;
+    --r-xl:  28px;
+    --r-full: 999px;
+
+    /* ── Neon Shadows / Glows ────────────────────────────────── */
+    --shadow-card:      0 4px 24px rgba(0,0,0,0.5);
+    --shadow-violet:    0 0 20px var(--glow-violet), 0 4px 24px rgba(0,0,0,0.4);
+    --shadow-cyan:      0 0 20px var(--glow-cyan),   0 4px 24px rgba(0,0,0,0.4);
+    --shadow-lg:        0 20px 60px rgba(0,0,0,0.6);
+
+    /* ── Transitions ─────────────────────────────────────────── */
+    --ease:         cubic-bezier(0.16, 1, 0.3, 1);
+    --transition:   all 0.3s var(--ease);
+}

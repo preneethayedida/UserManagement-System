@@ -1,0 +1,41 @@
+/**
+ * responsive.css — Mobile Breakpoints
+ */
+
+@media (max-width: 991.98px) {
+    .app-sidebar {
+        position: fixed;
+        left: -100%;
+        top: 0;
+        height: 100%;
+        z-index: 1050;
+        box-shadow: var(--shadow-lg), 20px 0 60px rgba(191,95,255,0.1);
+    }
+
+    .app-sidebar.mobile-open { left: 0; }
+
+    .sidebar-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(7,5,18,0.7);
+        z-index: 1040;
+        backdrop-filter: blur(4px);
+    }
+
+    .sidebar-overlay.show { display: block; }
+
+    .main-content { width: 100%; }
+    .container-fluid.p-4 { padding: 1rem !important; }
+}
+
+@media (max-width: 767.98px) {
+    .dashboard-stats-grid { grid-template-columns: 1fr 1fr; }
+    .page-title { font-size: 1.2rem; }
+    .app-navbar { padding: 0 1rem; }
+    .navbar-brand span { display: none; }
+}
+
+@media (max-width: 575.98px) {
+    .dashboard-stats-grid { grid-template-columns: 1fr; }
+}

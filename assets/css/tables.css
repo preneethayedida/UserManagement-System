@@ -1,0 +1,114 @@
+/**
+ * tables.css — Neon Data Tables
+ * ════════════════════════════════════════
+ */
+
+.table-responsive {
+    border-radius: var(--r-md) !important;
+    border: 1px solid var(--border) !important;
+    overflow: hidden;
+    background: var(--bg-card);
+}
+
+.table { margin-bottom: 0 !important; }
+
+.table thead th {
+    background: rgba(191,95,255,0.06) !important;
+    color: var(--neon-violet) !important;
+    font-size: 0.7rem !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.8px !important;
+    padding: 0.9rem 1.25rem !important;
+    border-bottom: 1px solid var(--border) !important;
+    white-space: nowrap;
+}
+
+.table tbody td {
+    padding: 0.9rem 1.25rem !important;
+    border-bottom: 1px solid var(--border) !important;
+    color: var(--text-body) !important;
+    font-size: 0.875rem !important;
+    vertical-align: middle !important;
+    background: transparent !important;
+}
+
+.table tbody tr:last-child td { border-bottom: none !important; }
+
+.table-hover tbody tr:hover td {
+    background: rgba(191,95,255,0.03) !important;
+}
+
+/* ── Status Badges ───────────────────────────────────────── */
+.badge-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.3em 0.85em;
+    border-radius: var(--r-full);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    border: 1px solid transparent;
+    white-space: nowrap;
+}
+
+.badge-status.active {
+    background: rgba(6,255,165,0.08);
+    color: var(--neon-cyan);
+    border-color: rgba(6,255,165,0.25);
+    box-shadow: 0 0 8px rgba(6,255,165,0.1);
+}
+
+.badge-status.inactive {
+    background: rgba(255,255,255,0.04);
+    color: var(--text-muted);
+    border-color: rgba(255,255,255,0.08);
+}
+
+.badge-status.suspended {
+    background: rgba(255,45,120,0.08);
+    color: var(--neon-pink);
+    border-color: rgba(255,45,120,0.25);
+    box-shadow: 0 0 8px rgba(255,45,120,0.1);
+}
+
+/* ── Pagination ──────────────────────────────────────────── */
+.pagination { gap: 0.3rem; }
+
+.page-link {
+    border: 1px solid var(--border) !important;
+    border-radius: var(--r-sm) !important;
+    color: var(--text-muted) !important;
+    padding: 0.45rem 0.85rem !important;
+    font-size: 0.82rem !important;
+    font-weight: 500 !important;
+    background: var(--bg-card) !important;
+    transition: var(--transition) !important;
+}
+
+.page-link:hover {
+    color: var(--neon-violet) !important;
+    background: var(--soft-violet) !important;
+    border-color: var(--border-bright) !important;
+    box-shadow: 0 0 10px var(--glow-violet) !important;
+}
+
+.page-item.active .page-link {
+    background: linear-gradient(135deg, var(--neon-violet), #7B3FE4) !important;
+    border-color: var(--neon-violet) !important;
+    color: #fff !important;
+    box-shadow: 0 0 16px var(--glow-violet) !important;
+}
+
+/* Badge override */
+.badge {
+    font-weight: 600 !important;
+    letter-spacing: 0.3px;
+}
+
+.badge.bg-secondary-subtle {
+    background: rgba(255,255,255,0.06) !important;
+    color: var(--text-muted) !important;
+    border: 1px solid var(--border);
+}

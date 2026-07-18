@@ -1,0 +1,121 @@
+/**
+ * buttons.css — Neon SaaS Buttons
+ * ════════════════════════════════════════
+ */
+.btn {
+    font-family: var(--font-heading) !important;
+    font-weight: 600 !important;
+    font-size: 0.84rem !important;
+    border-radius: var(--r-sm) !important;
+    padding: 0.62rem 1.35rem !important;
+    transition: var(--transition) !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.45rem !important;
+    border: 1px solid transparent !important;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Shimmer sweep on hover */
+.btn::after {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.12), transparent);
+    transition: left 0.5s var(--ease);
+}
+
+.btn:hover::after { left: 160%; }
+
+/* Primary — Neon Violet gradient */
+.btn-primary {
+    background: linear-gradient(135deg, var(--neon-violet) 0%, #7B3FE4 100%) !important;
+    color: #fff !important;
+    border-color: transparent !important;
+    box-shadow: 0 4px 16px var(--glow-violet) !important;
+}
+
+.btn-primary:hover, .btn-primary:focus {
+    transform: translateY(-2px);
+    box-shadow: 0 0 24px var(--glow-violet), 0 4px 20px rgba(0,0,0,0.3) !important;
+    color: #fff !important;
+    background: linear-gradient(135deg, #CA7BFF 0%, var(--neon-violet) 100%) !important;
+}
+
+/* Outline Primary — Neon Violet border */
+.btn-outline-primary {
+    background: transparent !important;
+    border-color: var(--neon-violet) !important;
+    color: var(--neon-violet) !important;
+    box-shadow: 0 0 0 0 var(--glow-violet) !important;
+}
+
+.btn-outline-primary:hover {
+    background: var(--soft-violet) !important;
+    box-shadow: 0 0 14px var(--glow-violet) !important;
+    transform: translateY(-2px);
+    color: var(--neon-violet) !important;
+}
+
+/* Outline Secondary — subtle border */
+.btn-outline-secondary {
+    background: rgba(255,255,255,0.03) !important;
+    border-color: var(--border) !important;
+    color: var(--text-body) !important;
+}
+
+.btn-outline-secondary:hover {
+    background: rgba(255,255,255,0.06) !important;
+    border-color: var(--border-bright) !important;
+    color: var(--neon-violet) !important;
+    transform: translateY(-1px);
+}
+
+/* Danger — Neon Pink */
+.btn-danger {
+    background: linear-gradient(135deg, var(--neon-pink) 0%, #CC0055 100%) !important;
+    color: #fff !important;
+    box-shadow: 0 4px 16px var(--glow-pink) !important;
+}
+
+.btn-danger:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 24px var(--glow-pink), 0 4px 20px rgba(0,0,0,0.3) !important;
+    color: #fff !important;
+}
+
+/* Outline Danger */
+.btn-outline-danger {
+    background: transparent !important;
+    border-color: rgba(255,45,120,0.4) !important;
+    color: var(--neon-pink) !important;
+}
+
+.btn-outline-danger:hover {
+    background: var(--soft-pink) !important;
+    border-color: var(--neon-pink) !important;
+    box-shadow: 0 0 14px var(--glow-pink) !important;
+    transform: translateY(-1px);
+    color: var(--neon-pink) !important;
+}
+
+/* Success — Neon Cyan */
+.btn-success {
+    background: linear-gradient(135deg, var(--neon-cyan) 0%, var(--neon-cyan-dark) 100%) !important;
+    color: #060C14 !important;
+    box-shadow: 0 4px 16px var(--glow-cyan) !important;
+}
+
+.btn-success:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 24px var(--glow-cyan) !important;
+    color: #060C14 !important;
+}
+
+/* Sizes */
+.btn-sm { padding: 0.4rem 0.9rem !important; font-size: 0.78rem !important; }
+.btn-lg { padding: 0.8rem 1.8rem !important; font-size: 0.92rem !important; }

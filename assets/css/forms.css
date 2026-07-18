@@ -1,0 +1,79 @@
+/**
+ * forms.css — Neon Input Fields
+ * ════════════════════════════════════════
+ */
+.form-control,
+.form-select {
+    background: var(--bg-input) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: var(--r-sm) !important;
+    color: var(--text-white) !important;
+    font-size: 0.88rem !important;
+    padding: 0.72rem 1rem !important;
+    transition: var(--transition) !important;
+}
+
+.form-control::placeholder { color: var(--text-muted) !important; }
+
+.form-control:focus,
+.form-select:focus {
+    background: var(--bg-input) !important;
+    border-color: var(--neon-violet) !important;
+    box-shadow: 0 0 0 3px rgba(191,95,255,0.15), 0 0 12px rgba(191,95,255,0.1) !important;
+    color: var(--text-white) !important;
+    outline: none !important;
+}
+
+/* Floating labels */
+.form-floating > .form-control {
+    padding: 1.625rem 0.75rem 0.625rem !important;
+    height: calc(3.5rem + 2px) !important;
+}
+
+.form-floating > .form-control::placeholder {
+    color: transparent !important;
+    -webkit-text-fill-color: transparent !important;
+}
+
+.form-floating > label {
+    color: var(--text-muted) !important;
+    padding: 1rem 0.75rem !important;
+    font-size: 0.88rem !important;
+}
+
+.form-floating > .form-control:focus ~ label,
+.form-floating > .form-control:not(:placeholder-shown) ~ label,
+.form-floating > .form-control:any-link ~ label {
+    color: var(--neon-violet) !important;
+    font-weight: 600 !important;
+    transform: scale(0.82) translateY(-0.65rem) translateX(0.1rem) !important;
+}
+
+/* Input group addon */
+.input-group-text {
+    background: var(--bg-input) !important;
+    border-color: var(--border) !important;
+    color: var(--text-muted) !important;
+}
+
+/* Validation */
+.form-control.is-invalid,
+.was-validated .form-control:invalid {
+    border-color: var(--neon-pink) !important;
+    box-shadow: 0 0 0 3px rgba(255,45,120,0.12) !important;
+}
+
+.form-control.is-valid,
+.was-validated .form-control:valid {
+    border-color: var(--neon-cyan) !important;
+    box-shadow: 0 0 0 3px rgba(6,255,165,0.12) !important;
+}
+
+.invalid-feedback { color: var(--neon-pink) !important; font-size: 0.78rem !important; }
+.valid-feedback   { color: var(--neon-cyan)  !important; font-size: 0.78rem !important; }
+
+/* Select option styling */
+.form-select option {
+    background: var(--bg-card);
+    color: var(--text-white);
+}
